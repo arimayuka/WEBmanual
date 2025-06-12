@@ -1,36 +1,33 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
   <head>
     <meta charset="UTF-8" />
     <title>WEBマニュアル</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/vue.css" />
+    
+    <!-- Docsifyテーマ（Vue） -->
+    <link rel="stylesheet" href="https://unpkg.com/docsify/lib/themes/vue.css" />
+    
+    <!-- 自作CSS -->
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <div id="app">Loading...</div>
 
-    <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
-    <script src="//unpkg.com/docsify/lib/plugins/search.min.js"></script>
+    <!-- Docsify本体 -->
+    <script src="https://unpkg.com/docsify/lib/docsify.min.js"></script>
+    <!-- 検索プラグイン -->
+    <script src="https://unpkg.com/docsify/lib/plugins/search.min.js"></script>
+
+    <!-- Docsifyの設定 -->
     <script>
       window.$docsify = {
         name: 'WEBマニュアル',
-        loadSidebar: true,
+        loadSidebar: '_sidebar.md',
         subMaxLevel: 2,
         search: 'auto',
+        basePath: '/', // ← GitHub Pages用に追加！
       }
     </script>
   </body>
 </html>
-<script>
-  function toggleSection(id) {
-    const target = document.getElementById(id);
-    const allSections = document.querySelectorAll('.section-content');
-
-    allSections.forEach(section => {
-      if (section !== target) section.style.display = 'none';
-    });
-
-    target.style.display = target.style.display === 'block' ? 'none' : 'block';
-  }
-</script>
